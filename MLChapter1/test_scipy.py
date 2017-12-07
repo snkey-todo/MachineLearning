@@ -74,7 +74,9 @@ f100 = sp.poly1d(sp.polyfit(x, y, 100))
 
 #plot_models(x, y, [f1], os.path.join("./images", "1400_01_01-1.png"))
 
-'''绘制模型，1400_01_02.png绘制了函数f1、1400_01_03.png同时绘制函数f1和f2进行对比、1400_01_04.png绘制了多个函数进行对比
+'''
+绘制模型
+1400_01_02.png绘制了函数f1、1400_01_03.png同时绘制函数f1和f2进行对比、1400_01_04.png绘制了多个函数进行对比
 '''
 #plot_models(x, y, [f1], os.path.join("./images", "1400_01_02.png"))
 #plot_models(x, y, [f1, f2], os.path.join("./images", "1400_01_03.png"))
@@ -88,21 +90,22 @@ print error(f10, x, y)
 print error(f100, x, y)
 '''
 
-# 重新训练数据，将数据分为两批处理，所有有两个数据集(xa,ya)\(xb,yb)
+'''
+重新训练数据，将数据分为两批处理，所有有两个数据集(xa,ya)\(xb,yb)
+'''
 inflection = int(3.5 * 7 * 24)
 xa = x[:inflection]
 ya = y[:inflection]
 xb = x[inflection:]
 yb = y[inflection:]
 
-# polyfit生成数据模型、poly1d转换为模型函数
+# 生成新的训练模型
 fa = sp.poly1d(sp.polyfit(xa, ya, 1))
 fb = sp.poly1d(sp.polyfit(xb, yb, 1))
 
 # 绘图
 # plot_models(x, y, [fa, fb], os.path.join("./images", "1400_01_05.png"))
 
-#fa_error = error(fa, xa, ya)
-#fb_error = error(fb, xb, yb)
+# 查看误差
 print("Error inflection= %f" % error(fa, xa, ya))
 print("Error inflection= %f" % error(fb, xb, yb))
