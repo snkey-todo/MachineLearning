@@ -57,7 +57,8 @@ def error(f, x, y):
     return sp.sum((f(x) - y) ** 2)
 
 # first look at the data
-#plot_models(x, y, None, os.path.join("./images", "1400_01_01.png"))
+#plot_models(x, y, None, os.path.join("./MLChapter1/images", "1400_01_01.png"))
+
 
 # create and plot models
 # polyfit创建模型类型，我们使用我们提炼出来的数据组x和y创建了一阶数据模型，也就是一条直线。
@@ -72,15 +73,15 @@ f10 = sp.poly1d(sp.polyfit(x, y, 10))
 f100 = sp.poly1d(sp.polyfit(x, y, 100))
 
 
-#plot_models(x, y, [f1], os.path.join("./images", "1400_01_01-1.png"))
+#plot_models(x, y, [f1], os.path.join("./MLChapter1/images", "1400_01_01-1.png"))
 
 '''
 绘制模型
 1400_01_02.png绘制了函数f1、1400_01_03.png同时绘制函数f1和f2进行对比、1400_01_04.png绘制了多个函数进行对比
 '''
-#plot_models(x, y, [f1], os.path.join("./images", "1400_01_02.png"))
-#plot_models(x, y, [f1, f2], os.path.join("./images", "1400_01_03.png"))
-#plot_models(x, y, [f1, f2, f3, f10, f100], os.path.join("./images", "1400_01_04.png"))
+#plot_models(x, y, [f1], os.path.join("./MLChapter1/images", "1400_01_02.png"))
+#plot_models(x, y, [f1, f2], os.path.join("./MLChapter1/images", "1400_01_03.png"))
+#plot_models(x, y, [f1, f2, f3, f10, f100], os.path.join("./MLChapter1/images", "1400_01_04.png"))
 '''
 查看误差
 print error(f1, x, y)
@@ -104,7 +105,7 @@ fa = sp.poly1d(sp.polyfit(xa, ya, 1))
 fb = sp.poly1d(sp.polyfit(xb, yb, 1))
 
 # 绘图
-# plot_models(x, y, [fa, fb], os.path.join("./images", "1400_01_05.png"))
+# plot_models(x, y, [fa, fb], os.path.join("./MLChapter1/images", "1400_01_05.png"))
 
 # 查看误差
 print("Error inflection= %f" % error(fa, xa, ya))
