@@ -30,5 +30,4 @@ for i,(p0,p1) in enumerate(pairs):
     plt.xticks([])
     plt.yticks([])
 
-# 对原始数据可视化
-#plt.savefig('./MLChapter2/images/1400_02_01.png')
+plt.savefig('./MLChapter2/images/1400_02_01.png')
